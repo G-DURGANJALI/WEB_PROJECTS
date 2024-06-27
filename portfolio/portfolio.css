@@ -5,11 +5,11 @@
 	text-decoration: none;
 	border: none;
 	outline: none;
-	scroll-behavior: smooth;
-	font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins',sans-serif;
 	
 
 }
+
  :root{
 
 	--bg-color:#1f242d;
@@ -18,15 +18,24 @@
 	--main-color:#0ef;
 
  }
- html{
+ span{
+	color: #0ef;
+ }
+ #menu{
+	font-size: 3.6rem;
+	color: #fff;
+	cursor: pointer;
 
-	font-size: 62.5;
+ }
+ html{
 	overflow-x: hidden;
+
  }
  body{
 
 	background-color:var(--bg-color);
 	color:var(--text-color);
+	
  }
  section
   {
@@ -41,7 +50,7 @@
 	left:0;
      width: 100%;
 	 padding: 2rem 9%;
-	 background: var(--bg-color);
+     background-color: aquamarine;
 	 display: flex;
 	 justify-content: space-between;
 	 align-items: center;
@@ -52,28 +61,24 @@
 	font-size: 2.5rem;
     color: var(--text-color);
 	font-weight: 600;
-	cursor: default;
+	
  }
 
  .navbar a {
-	font-size: 1.7rem;
+	font-size: 1.5rem;
 	 color:var(--text-color);
+	 font-weight: 500;
 	 margin-left: 2rem;
-	 transition:3s;
+	 transition:2s;
   }
   .navbar a:hover,
-  .navbar a.present
+  .navbar a .present
   {
 
 	color:var(--main-color);
 
   }
-  #menu-icon{
-	
-	font-size: 3.6rem;
-	color:var(--text-color);
-	display: none;
-  }
+
   .home{
 
 	
@@ -184,30 +189,77 @@
 	color: var(--second-bg-color);
 
 }
-.education{
-	display: flex;
 
-	justify-content: center;
-	align-items: center;
+
+.education-content{
+	height: 250px;
+	width: 700px;
+	position: relative;
+	padding-left: 60px;
+	padding-top: 30px;
+	font-size: 25px;
+	border: 5px solid var(--main-color);
+	border-radius: .5rem;
+
+}
+.education-box{
+	display: flex;
 	flex-direction: column;
-	min-height: auto;
-	padding-top: 5rem;
-}
-.education .education-row{
+	gap: 20px;
 
-	display: flex;
-	flex-wrap: wrap;
-	gap: 5rem;
 }
-.education-row .education-column{
-	flex: 1 1 40rem;
-}
+
 .education-column .title
 {
+
 	font-size: 2.5rem;
-	margin: 0 0 1.5rem 2rem;
+	color: #0ef;
+	padding-left: 0px;
+	padding-bottom: 30px;
+
 
 }
+.education-column{
+	border-left: 3px solid #0ef;
+	padding-left: 50px;
+
+}
+
+.education-row{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	justify-content: space-between;
+	gap:150px;
+
+}
+
+ 
+.education h2{
+	font-size: 60px;
+	text-align: center;
+	padding-bottom: 70px;
+	
+
+}
+.year{
+	font-size: 1.5rem;
+	color: #0ef;
+	padding-bottom: .5rem;
+}
+.circle{
+	top: 0;
+	width: 30px;
+	position: relative;
+	height: 30px;
+	border-radius: 50%;
+	background-color: #0ef;
+	left: -130px;
+	top: -30px;
+	
+}
+
 .skills{
 	min-height: auto;
 	padding-bottom: 7rem;
@@ -257,6 +309,52 @@
 	margin: .8rem 0;
 
 }
+.progress{
+	padding: 1rem 0;
+
+}
+.progress > h3{
+	font-size: 1.7rem;
+	display: flex;
+	justify-content: space-between;
+
+}
+.progress .bar{
+	height: 2.5rem;
+	border-radius: .6rem;
+	border: .2rem solid #0ef;
+
+}
+.bar span{
+	display: block;
+	height: 100%;
+	border-radius: .3rem;
+	background-color: #0ef;
+}
+.skills-column :nth-child(1).skills-content .progress:nth-child(1) .bar span{
+	width: 90%;
+}
+.skills-column :nth-child(1).skills-content .progress:nth-child(2) .bar span{
+	width: 80%;
+}
+.skills-column :nth-child(1).skills-content .progress:nth-child(3) .bar span{
+	width: 60%;
+}
+.skills-column :nth-child(1).skills-content .progress:nth-child(4) .bar span{
+	width: 70%;
+}
+.skills-column :nth-child(2).skills-content .progress:nth-child(1) .bar span{
+	width: 90%;
+}
+.skills-column :nth-child(2).skills-content .progress:nth-child(2) .bar span{
+	width: 80%;
+}
+.skills-column :nth-child(2).skills-content .progress:nth-child(3) .bar span{
+	width: 60%;
+}
+.skills-column :nth-child(2).skills-content .progress:nth-child(4) .bar span{
+	width: 70%;
+}
 .contact form .input-box .input-field input,
 .contact form .textarea-field textarea{
 	width: 100%;
@@ -268,23 +366,68 @@
 	border-radius: .6rem;
 	border: .2rem solid var(--main-color);
 }
+
 .contact form .input-box .input-field input::placeholder,
 .contact form .textarea-field textarea::placeholder{
 
-	color: var(--text-color);
+	color: #fff;
 }
 .contact form .textarea-field{
 	position: relative;
 	margin: .8rem 0 2.7rem;
 	display: flex;
 }
-.contact form .textarea-field textarea{
-	resize: none;
-}
+
 .contact form .btn-box.btns .btn{
 
-    width: 10rem;
-	height: 5rem;
+    width: 350px;
+	height: 100px;
+	border-radius: .4rem;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       v
 	background-color: var(--main-color);
-	cursor: pointer;
+	
+}
+textarea{
+	resize: none;
+}
+.contact h2{
+	font-size:   70px;
+}
+@media(max-width: 1200px)
+{
+	html{
+		font-size: 55%;
+	}
+}
+@media(max-width:991px){
+	.header{
+		padding: 2rem 4%;
+	}
+	.section{
+		padding: 10rem 4% 2rem;
+	}
+	.home{
+		padding: 0 4%;
+	}
+
+}
+@media(max-width:760px){
+     .header{
+		background-color: #0ef;
+	 }
+	 .navbar{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		padding: 1rem 4%;
+		background-color: #0ef;
+		box-shadow: 0 .5rem 1rem rgba(0,0,0,1);
+	 }
+	 .navbar a{
+		display :block;
+		font-size: 2rem;
+		margin: 3rem 0;
+	 }
+
+	 
 }
