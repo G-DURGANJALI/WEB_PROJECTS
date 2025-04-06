@@ -18,7 +18,7 @@ const MyApplications = () => {
     try {
       if (user && user.role === "Employer") {
         axios
-          .get("http://localhost:5000/api/v1/application/employer/getall", {
+          .get("https://job-portal-backend-tg6f.onrender.com/api/v1/application/employer/getall", {
             withCredentials: true,
           })
           .then((res) => {
